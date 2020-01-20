@@ -13,10 +13,10 @@ public class Main extends Sprite {
         var php_url:String = !!this.root.loaderInfo.parameters.php_url?this.root.loaderInfo.parameters.php_url:"";
         var url:String = php_url!=""?php_url:endpoint;
         var contentType:String = !!this.root.loaderInfo.parameters.ct?this.root.loaderInfo.parameters.ct:"application/json";
-        var header:String= this.root.loaderInfo.parameters.header?this.root.loaderInfo.parameters.header:"X-Requested-With";
-        var value:String=this.root.loaderInfo.parameters.value?this.root.loaderInfo.parameters.value:"XMLHttpRequest";
-        var type:String=this.root.loaderInfo.parameters.type?this.root.loaderInfo.parameters.type:"json";
-        var reqMethod:String = this.root.loaderInfo.parameters.req_method?this.root.loaderInfo.parameters.req_method:"GET";
+        var header:String= !!this.root.loaderInfo.parameters.header?this.root.loaderInfo.parameters.header:"X-Requested-With";
+        var value:String= !!this.root.loaderInfo.parameters.value?this.root.loaderInfo.parameters.value:"XMLHttpRequest";
+        var type:String= !!this.root.loaderInfo.parameters.type?this.root.loaderInfo.parameters.type:"json";
+        var reqMethod:String = !!this.root.loaderInfo.parameters.req_method?this.root.loaderInfo.parameters.req_method:"GET";
 
         if(type != "json" ){
             data = data.replace(",","&");
